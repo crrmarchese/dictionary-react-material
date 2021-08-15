@@ -6,8 +6,12 @@ import './App.css';
 
 function App() {
 
+  // Search word user types in "Search a Word" field
   const [searchWord, setSearchWord] = useState("");
+  // Languages from data/category.js file to populate dropdown list
   const [definitions, setDefinitions] = useState([]);
+  // 
+  const [language, setLanguage] = useState("en");
 
 // Set up Dictionary API
 // async makes a function return a Promise
@@ -24,7 +28,7 @@ function App() {
   }
 
   console.log(definitions);
-  // Calls the function the first time the component is rendered
+  // Calls the function the first time the component is rendered to populate "Language" dropdown
   useEffect(() => {
     dictionaryAPI();
   }, []);
@@ -32,7 +36,7 @@ function App() {
   return (
     <div className="App">
     <Container className="main" maxWidth="md">
-      <Header />
+      <Header language={ language } setLanguage={ setLanguage } searchWord={ searchWord } setSearchWord={ setSearchWord } />
     </Container>
     </div>
   );
