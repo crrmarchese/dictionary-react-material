@@ -18,6 +18,12 @@ const Header = ({language, setLanguage, searchWord, setSearchWord}) => {
         },
     });
 
+    // Function to clear out search word when language is changed
+    const handleLanguageChange = (language) => {
+        setLanguage(language);
+        setSearchWord("");
+    }
+
     return (
         <div className="header">
             <span className="title">{searchWord ? searchWord : "Word Hunt"}</span>
@@ -39,7 +45,7 @@ const Header = ({language, setLanguage, searchWord, setSearchWord}) => {
                             id="select-language"
                             
                             value={language}
-                            onChange={(e) => setLanguage(e.target.value)}
+                            onChange={(e) => handleLanguageChange(e.target.value)}
                         >
                         {/* Map over languages to show in dropdown */}
                         {
