@@ -47,7 +47,7 @@ const Header = ({language, setLanguage, searchWord, setSearchWord}) => {
                             value={language}
                             onChange={(e) => handleLanguageChange(e.target.value)}
                         >
-                        {/* Map over languages to show in dropdown */}
+                        {/* Map over languages from data/category.js to show in dropdown */}
                         {
                             categories.map((category) => (
                             <MenuItem key={category.label} value={category.label}>{ category.value }</MenuItem>
