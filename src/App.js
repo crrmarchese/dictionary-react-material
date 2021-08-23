@@ -9,8 +9,8 @@ function App() {
 
   // Search word user types in "Search a Word" field
   const [searchWord, setSearchWord] = useState("");
-  // Set Languages from data/category.js file to populate Languages dropdown list
-  const [definitions, setDefinitions] = useState([]);
+  // Store data from API (Object > data > meanings > definitions)
+  const [meanings, setMeanings] = useState([]);
   // Set the Language to English on initial load
   const [language, setLanguage] = useState("en");
 
@@ -22,14 +22,14 @@ function App() {
     // In order to change the API, must use dynamic variables in the URL
     try {
       const apiData = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${language}/${searchWord}`);
-      // console.log(apiData);
-      setDefinitions(apiData.data);
+      // console.log(apiData); // Returns entire API to view data included
+      setMeanings(apiData.data); // Get the API Object > Data array and put it into the state
     } catch (error) {
       console.log(error);
     }
   }
 
-  console.log(definitions);
+  //console.log(meanings); // Returns the API Object > Data array 
   // Calls the function the first time the component is rendered to populate "Language" dropdown; In the dependency array, we need to call the API everytime we change the language, or search word.
   useEffect(() => {
     dictionaryAPI();
@@ -39,9 +39,9 @@ function App() {
     <div className="App">
     <Container className="main" maxWidth="md">
       <Header language={ language } setLanguage={ setLanguage } searchWord={ searchWord } setSearchWord={ setSearchWord } />
-      {/* if there is a definition, render the definition, if no definition, this doesn't show */}
-      {definitions && (
-      <Definitions searchWord={ searchWord } definitions={ definitions } language={ language }/>
+      {/* If there is a definition, render the definition. If no definition, this doesn't show. */}
+      {meanings && (
+      <Definitions searchWord={ searchWord } meanings={ meanings } language={ language }/>
       )}
       
     </Container>
