@@ -4,7 +4,7 @@ import './definitions.css';
 // Props from App (Search Word, Language and Meaning--data from API)
 const Definitions = ({ searchWord, language, meanings }) => {
     return (
-        <div className="word-definitions">
+        <div className="word-definitions-container">
             {
                 searchWord === "" ? (<span className="subtitle">Start by typing a word in Search</span>) : (
                     // Map through each item in data array > meanings array
@@ -15,16 +15,22 @@ const Definitions = ({ searchWord, language, meanings }) => {
                             //console.log(item);
                             item.definitions.map((def) => (
                                 <div className="word-definition" style={{ backgroundColor: "white", color: "black"}}>
-                                   {def.definition} 
-                                   <hr style={{ backgroundColor: "black", width: "100%"}} />
-                                   {def.example && (
-                                       <span>
+                                  <p> <strong>{ def.definition }</strong> </p>
+                                  <hr style={{ backgroundColor: "black", width: "100%"}} />
+                                   { def.example && (
+                                       <p>
                                            <strong>Example: </strong>
-                                           {def.example}
-                                       </span>
-                                   )
+                                           { def.example }
+                                       </p>
+                                   )}
 
-                                   }
+                                   { def.synonyms && (
+                                        <p>
+                                           <strong>Synonyms: </strong>
+                                           { def.synonyms.map((synonym) =>`${ synonym },`)}
+                                       </p>
+                                   )}
+                                   
                                 </div>
                             )
                         ))
