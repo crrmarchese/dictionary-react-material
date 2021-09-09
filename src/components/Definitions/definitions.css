@@ -31,3 +31,21 @@
         height: 60vh;
     }
 }
+
+@media (min-width: 960px) and (max-width: 1091px) {
+    .subtitle {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 1092px) and (max-width: 1399px) {
+    .subtitle {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .subtitle {
+        font-size: 2vw;
+    }
+}
