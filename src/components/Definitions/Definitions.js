@@ -1,10 +1,23 @@
 import React from 'react';
 import './definitions.css';
 
-// Props from App (Search Word, Language and Meaning--data from API)
+// Props from App (Search Word, Language and Meanings--data from API)
 const Definitions = ({ searchWord, language, meanings }) => {
     return (
         <div className="word-definitions-container">
+
+            {
+            /* Audio file shows only if there is an audio file available in the returned data, there is a word associated with the file and the language is english */
+            meanings[0] && searchWord && language === "en" && (
+                <audio 
+                src={ meanings[0].phonetics[0] && `https:${meanings[0].phonetics[0].audio}` }
+                style={{ backgroundColor: '#fff', borderRadius: 10 }}
+                controls> 
+                    Sorry! Your browser doesn't support the audio element.
+                </audio>
+            )
+
+            }
             {
                 searchWord === "" ? (<span className="subtitle">Start by typing a word in Search</span>) : (
                     // Map through each item in data array > meanings array
