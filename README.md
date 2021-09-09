@@ -1,6 +1,9 @@
 # Dictionary with React and Material UI
 
-## Technology
+## Description
+Dictionary App using React JS, Material UI and an unofficial Google Dictionary API that supports over 12 languages.
+
+## Technologies
 * [React](https://reactjs.org/)
 * [Material UI](https://material-ui.com/)
 * [Google Dictionary API (unofficial)](https://dictionaryapi.dev)
@@ -8,4 +11,7 @@
 
 ## Credits
 * [Code a Dictionary with React and Material UI Tutorial](https://www.youtube.com/watch?v=ToXna81iij0) by [freeCodeCamp.org](https://www.freecodecamp.org/)
+
+## Lessons Learned
+* Building an app with Material UI
 
