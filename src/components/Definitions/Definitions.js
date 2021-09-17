@@ -13,7 +13,7 @@ const Definitions = ({ searchWord, language, meanings }) => {
                 src={ meanings[0].phonetics[0] && `https:${meanings[0].phonetics[0].audio}` }
                 style={{ backgroundColor: '#fff', borderRadius: 10 }}
                 controls> 
-                    Sorry! Your browser doesn't support the audio element.
+                    <p>Sorry! Your browser doesn't support the audio element.</p>
                 </audio>
             )
 
@@ -37,7 +37,7 @@ const Definitions = ({ searchWord, language, meanings }) => {
                                        </p>
                                    )}
 
-                                   { def.synonyms && (
+                                   { def.synonyms[0] && (
                                         <p>
                                            <strong>Synonyms: </strong>
                                            { def.synonyms.map((synonym) =>`${ synonym },`)}
