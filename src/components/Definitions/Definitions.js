@@ -1,8 +1,8 @@
 import React from 'react';
 import './definitions.css';
 
-// Props from App (Search Word, Language and Meanings--data from API)
-const Definitions = ({ searchWord, language, meanings }) => {
+// Props from App (Search Word, Language and Meanings--data from API, Theme Mode color settings)
+const Definitions = ({ searchWord, language, meanings, themeMode }) => {
     return (
         <div className="word-definitions-container">
 
@@ -27,9 +27,9 @@ const Definitions = ({ searchWord, language, meanings }) => {
                          meaning.meanings.map((item) => (
                             //console.log(item);
                             item.definitions.map((def) => (
-                                <div className="word-definition" style={{ backgroundColor: "white", color: "black"}}>
+                                <div className="word-definition" style={{ backgroundColor: themeMode ? "#3b5360" : "#fff", color: themeMode ? "#fff" : "#000"}}>
                                   <p> <strong>{ def.definition }</strong> </p>
-                                  <hr style={{ backgroundColor: "black", width: "100%"}} />
+                                  <hr style={{ backgroundColor: "#000", width: "100%"}} />
                                    { def.example && (
                                        <p>
                                            <strong>Example: </strong>
