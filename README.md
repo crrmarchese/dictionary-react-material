@@ -14,4 +14,7 @@ Dictionary App using React JS, Material UI and an unofficial Google Dictionary A
 
 ## Lessons Learned
 * Building an app with Material UI
+* Conditional rendering in React
+* Prop drilling to better understand the use of Props
+
 
