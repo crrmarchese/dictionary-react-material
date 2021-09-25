@@ -27,9 +27,9 @@ const Definitions = ({ searchWord, language, meanings, themeMode }) => {
                          meaning.meanings.map((item) => (
                             //console.log(item);
                             item.definitions.map((def) => (
-                                <div className="word-definition" style={{ backgroundColor: themeMode ? "#3b5360" : "#fff", color: themeMode ? "#fff" : "#000"}}>
+                                <div className="word-definition" style={{ backgroundColor: themeMode ? "#757575" : "#fff", color: themeMode ? "#fff" : "#222"}}>
                                   <p> <strong>{ def.definition }</strong> </p>
-                                  <hr style={{ backgroundColor: "#000", width: "100%"}} />
+                                  <hr style={{ backgroundColor: "#222", width: "100%"}} />
                                    { def.example && (
                                        <p>
                                            <strong>Example: </strong>

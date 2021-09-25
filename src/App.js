@@ -62,7 +62,7 @@ function App() {
       style= {{
         height: "100vh",
         backgroundColor: lightMode ? "#fff" : "#282c34",
-        color: lightMode ? "#000" : "#fff",
+        color: lightMode ? "#222" : "#fff",
         transition: "all 0.75s linear"
       }}
     >
